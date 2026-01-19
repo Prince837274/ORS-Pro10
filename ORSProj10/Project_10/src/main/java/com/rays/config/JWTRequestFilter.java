@@ -36,7 +36,7 @@ public class JWTRequestFilter extends OncePerRequestFilter {
 
 		if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
 
-			String jwtToken = authorizationHeader.substring(7);
+			String jwtToken = authorizationHeader.substring(7);// .substring se 7 charactetr ko remove kra aur usko string type k variable m hold kara
 
 			try {
 				if (!jwtUtil.validateToken(jwtToken)) {

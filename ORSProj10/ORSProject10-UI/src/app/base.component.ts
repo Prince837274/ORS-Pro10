@@ -23,7 +23,7 @@ export class BaseCtl implements OnInit {
   initApi(ep) {
     this.api.endpoint = ep;
     this.api.get = ep + "/get";
-    this.api.save = ep + "/save";
+    this.api.save = ep + "/save";//http://localhost:8080/transportation/saven 
     this.api.search = ep + "/search";
     this.api.delete = ep + "/delete";
     this.api.deleteMany = ep + "/deleteMany";

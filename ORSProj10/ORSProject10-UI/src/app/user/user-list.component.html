@@ -4,7 +4,7 @@
     background: none;
     border: none;
   }
-</style>
+</style> 
 
 <div class="content-wrapper" style=" padding-top: 7%;
 background: url(assets/files/wall.jpg) no-repeat center center;
@@ -13,7 +13,7 @@ background-size: cover;width:auto;
   height: 119vh;">
   <div class="container-fluid padding-bottom: 20px;">
 
-    <div class="panel panel-primary">
+    <div class="panel panel-primary"> 
       <div class="panel-heading" style="height: 50px;">
         <!-- <div class="col-sm-5"> -->
         <div class="text-center">
@@ -28,7 +28,6 @@ background-size: cover;width:auto;
             placeholder="{{'Search First Name' | translate}}">
 
         </div>
-
 
         <!-- <div class="col-sm-2">
           <input type="date" class="form-control" [(ngModel)]="form.searchParams.dob"
@@ -47,6 +46,8 @@ background-size: cover;width:auto;
           </select>
         </div>
         <div class="col-sm-2">
+
+        
           <!-- <input type="text" class="form-control" [(ngModel)]="form.searchParams.status" placeholder="{{'Search Status' | translate}}"> -->
         </div>
         <div class="col-sm-1 ml-3">
@@ -106,7 +107,7 @@ background-size: cover;width:auto;
 
                 <td>
                   <div *ngIf="m.imageId" >
-                    <img src="http://localhost:8084/User/profilePic/{{m.id}}" height="55px" width="80px" style="border-radius: 50%;">
+                    <img src="http://localhost:8080/User/profilePic/{{m.id}}" height="55px" width="80px" style="border-radius: 50%;">
                   </div>
                   <div *ngIf="!m.imageId" >
                     <img src="../../assets/files/default.jpg" height="55px" width="80px" style="border-radius: 50%;">

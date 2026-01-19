@@ -28,7 +28,7 @@ public class JWTUserDetailsService implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
 		UserDTO user = userDao.findByEmail("email", username, null);
-
+ 
 		if (user == null) {
 			System.out.println("user found nuulllll");
 			throw new UsernameNotFoundException("User not found with username : " + username);
@@ -36,6 +36,6 @@ public class JWTUserDetailsService implements UserDetailsService {
 
 		return User.builder().username(user.getLoginId()).password(passwordEncoder().encode(user.getPassword()))
 				.roles("USER").build();
-
+ 
 	}
 }

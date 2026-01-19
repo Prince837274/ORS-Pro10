@@ -68,7 +68,7 @@ public class UserDAOImpl extends BaseDAOImpl<UserDTO> implements UserDAOInt {
 
 			whereCondition.add(builder.equal(qRoot.get("status"), dto.getStatus()));
 		}
-
+		
 		if (!isZeroNumber(dto.getRoleId())) {
 
 			whereCondition.add(builder.equal(qRoot.get("roleId"), dto.getRoleId()));
@@ -77,6 +77,8 @@ public class UserDAOImpl extends BaseDAOImpl<UserDTO> implements UserDAOInt {
 		if (isNotNull(dto.getDob())) {
 
 			whereCondition.add(builder.equal(qRoot.get("dob"), dto.getDob()));
+			
+			
 		}
 
 		return whereCondition;

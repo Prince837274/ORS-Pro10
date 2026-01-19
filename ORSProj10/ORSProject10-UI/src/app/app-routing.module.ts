@@ -38,6 +38,10 @@ import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product/product-list.component';
 import { CustomerComponent } from './customer/customer.component';
 import { CustomerListComponent } from './customer/customer-list.component';
+import { TransportationComponent } from './transportation/transportation.component';
+import { TransportationListComponent } from './transportation/transportation-list.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { EmployeeListComponent } from './employee/employee-list.component';
 
 const routes: Routes = [
     {
@@ -281,6 +285,31 @@ const routes: Routes = [
 
 
     },
+    {
+        path: 'transportation',
+        component: TransportationComponent
+    },
+    {
+        path: 'transportationlist',
+        component: TransportationListComponent
+    },
+     {
+        path: 'transportation/:id',
+        component:TransportationComponent
+
+    },
+    {
+        path : 'employee',
+        component : EmployeeComponent
+    },
+    {
+        path : 'employeelist',
+        component : EmployeeListComponent
+    },
+    {
+        path: 'employee/:id',
+        component : EmployeeComponent
+    }
 
 
 

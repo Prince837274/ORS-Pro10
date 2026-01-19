@@ -91,13 +91,13 @@ public abstract class BaseDAOImpl<T extends BaseDTO> implements BaseDAOInt<T> {
 
 		CriteriaBuilder builder = entityManager.getCriteriaBuilder();
 
-		CriteriaQuery<T> cq = builder.createQuery(getDTOClass());
+		CriteriaQuery<T> cq = builder.createQuery(getDTOClass());//select * from st_transportation where 1=1
 
 		Root<T> qRoot = cq.from(getDTOClass());
 
 		cq.select(qRoot);
 
-		List<Predicate> whereClause = getWhereClause(dto, builder, qRoot);
+		List<Predicate> whereClause = getWhereClause(dto, builder, qRoot);//and firstName like ' '
 
 		cq.where(whereClause.toArray(new Predicate[whereClause.size()]));
 
@@ -114,16 +114,16 @@ public abstract class BaseDAOImpl<T extends BaseDTO> implements BaseDAOInt<T> {
 	 * @param qRoot
 	 * @return
 	 */
-	protected abstract List<Predicate> getWhereClause(T dto, CriteriaBuilder builder, Root<T> qRoot);
+	protected abstract List<Predicate> getWhereClause(T dto, CriteriaBuilder builder, Root<T> qRoot);  
 
-	public List search(T dto, int pageNo, int pageSize, UserContext userContext) {
+	public List search(T dto, int pageNo, int pageSize, UserContext userContext) { 
 	
 		TypedQuery<T> query = createCriteria(dto, userContext);
 
 		if (pageSize > 0) {
 
 			query.setFirstResult(pageNo * pageSize);
-			query.setMaxResults(pageSize);
+			query.setMaxResults(pageSize);//limit (0,5)
 		}
 
 		List list = query.getResultList();
@@ -131,7 +131,7 @@ public abstract class BaseDAOImpl<T extends BaseDTO> implements BaseDAOInt<T> {
 		return list;
 	}
 
-	public List search(T dto, UserContext userContext) {
+	public List search(T dto, UserContext userContext) { // Preload call
 		return search(dto, 0, 0, userContext);
 	}
 
@@ -198,11 +198,10 @@ public abstract class BaseDAOImpl<T extends BaseDTO> implements BaseDAOInt<T> {
 		populate(dto, userContext);
 
 		entityManager.merge(dto);
-
 	}
 
 	/**
-	 * Check unique keys
+	 * Check unique keys 
 	 * 
 	 * @param dto
 	 */

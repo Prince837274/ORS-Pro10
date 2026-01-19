@@ -29,7 +29,7 @@ public class ProjectOrsApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProjectOrsApplication.class, args);
-
+  
 	}
 
 	@Bean

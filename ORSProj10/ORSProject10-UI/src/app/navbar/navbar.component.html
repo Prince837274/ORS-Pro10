@@ -7,7 +7,7 @@
     /* Rounded corners */
   }
 
-  .prakhar {
+  .prince {
     background-image: linear-gradient(220deg, #0d0a0b 0%, #009fc2 120%);
   }
 
@@ -17,7 +17,7 @@
 </style>
 
 <div class="header">
-  <nav *ngIf="!isLogin()" class="navbar navbar-expand-lg fixed-top prakhar">
+  <nav *ngIf="!isLogin()" class="navbar navbar-expand-lg fixed-top prince">
     <div class="logo">
       <a class="nav-link" [routerLink]="['/dashboard']">
         <!-- <strong class="text-white">Rays</strong> -->
@@ -30,7 +30,7 @@
       </option>
       <option value="en" style="color: red">English</option>
       <option value="hi" style="color: red">{{ "Hindi" | translate }}</option>
-    </select>
+    </select> 
 
     <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,7 +59,7 @@
   </nav>
 </div>
 
-<nav *ngIf="isLogin()" class="navbar navbar-expand-lg fixed-top prakhar">
+<nav *ngIf="isLogin()" class="navbar navbar-expand-lg fixed-top prince">
   <div class="logo">
     <a class="nav-link" [routerLink]="['/dashboard']">
       <!-- <strong class="text-white">Rays</strong> -->
@@ -80,20 +80,39 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="nav navbar-nav pl-2">
-      <!-- <li class="nav-item dropdown" style="padding-left: 5px">
+
+     <li class="nav-item dropdown" style="padding-left: 5px">
+
         <a class="nav-link dropdown-toggle" [routerLink]="['/#']" id="navbarDropdown" role="button"
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <font style="color: white">{{ "Product" | translate }}</font>
+          <font style="color: white">{{ "Transportation" | translate }}</font>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" [routerLink]="['/product']"><i class="fa fa-university"></i> &nbsp;
-            {{ "Add Product" | translate }}</a>
-          <a class="dropdown-item" [routerLink]="['/productlist']"><i class="fa fa-building"></i> &nbsp;
-            {{ "Product List" | translate }}
+          <a class="dropdown-item" [routerLink]="['/transportation']"><i class="fa fa-university"></i>  &nbsp;
+            {{ "Add Transportation" | translate }}</a>
+          <a class="dropdown-item" [routerLink]="['/transportationlist']"><i class="fa fa-building"></i>  &nbsp;
+            {{ "Transportation List" | translate }}
           </a>
         </div>
       </li>
 
+
+         <li class="nav-item dropdown" style="padding-left: 5px">
+
+        <a class="nav-link dropdown-toggle" [routerLink]="['/#']" id="navbarDropdown" role="button"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <font style="color: white">{{ "Employee" | translate }}</font>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/employee']"><i class="fa fa-university"></i>  &nbsp;
+            {{ "Add Employee" | translate }}</a>
+          <a class="dropdown-item" [routerLink]="['/employeelist']"><i class="fa fa-building"></i>  &nbsp;
+            {{ "Employee List" | translate }}
+          </a>
+        </div>
+      </li>
+
+ <!-- 
       <li class="nav-item dropdown" style="padding-left: 5px">
         <a class="nav-link dropdown-toggle" [routerLink]="['/#']" id="navbarDropdown" role="button"
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

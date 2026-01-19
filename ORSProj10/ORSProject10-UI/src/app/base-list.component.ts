@@ -68,20 +68,26 @@ export class BaseListCtl extends BaseCtl {
       element.nativeElement.checked = checked
     });
   }
-  checklistUpdate() {
+  // checklistUpdate() {
 
-    this.isMasterSel = false;
-    this.checkList = 0;
-    this.checkboxes.forEach((element) => {
-      if (element.nativeElement.checked == true) {
-        this.checkList = this.checkList + 1;
-      }
-    });
-    if (this.checkList == this.form.list.length) {
-      this.isMasterSel = true;
+  //   this.isMasterSel = false;
+  //   this.checkList = 0;
+  //   this.checkboxes.forEach((element) => {
+  //     if (element.nativeElement.checked == true) {
+  //       this.checkList = this.checkList + 1;
+  //     }
+  //   });
+  //   if (this.checkList == this.form.list.length) {
+  //     this.isMasterSel = true;
 
+  //   }
+  // }
+
+    checklistUpdate() {
+        const totalChecked = this.checkboxes.filter(cb => cb.nativeElement.checked).length;
+        this.isMasterSel = totalChecked === this.form.list.length;
     }
-  }
+
 
   deleteMany() {
     

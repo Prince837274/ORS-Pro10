@@ -15,7 +15,7 @@ import { format } from 'url';
 export class SignUpComponent implements OnInit {
 
 
-  endpoint = "http://localhost:8084/Auth/signUp";
+  endpoint = "http://localhost:8080/Auth/signUp";
 
   public form = {
 
