@@ -4,7 +4,7 @@
     background: none;
     border: none;
   }
-</style> 
+</style>
 
 <div class="content-wrapper" style=" padding-top: 7%;
 background: url(assets/files/wall.jpg) no-repeat center center;
@@ -13,21 +13,22 @@ background-size: cover;width:auto;
   height: 119vh;">
   <div class="container-fluid padding-bottom: 20px;">
 
-    <div class="panel panel-primary"> 
+    <div class="panel panel-primary">
       <div class="panel-heading" style="height: 50px;">
         <!-- <div class="col-sm-5"> -->
         <div class="text-center">
-          <h1 class="text-primary font-weight-bold">{{'User List' | translate }}</h1>
+          <h1 class="text-primary font-weight-bold">{{'Compensation List' | translate }}</h1>
         </div>
       </div>
       <!-- <button class="filebtn third">Button 3</button> -->
       <div class="row p-1">
         <div class="col-sm-1"></div>
         <div class="col-sm-2">
-          <input type="text" class="form-control" [(ngModel)]="form.searchParams.firstName"
-            placeholder="{{'Search First Name' | translate}}">
+          <input type="text" class="form-control" [(ngModel)]="form.searchParams.paymentAmount"
+            placeholder="{{'Search paymentAmount' | translate}}">
 
         </div>
+
 
         <!-- <div class="col-sm-2">
           <input type="date" class="form-control" [(ngModel)]="form.searchParams.dob"
@@ -38,16 +39,14 @@ background-size: cover;width:auto;
         <!-- <div class="col-sm-2">
           <input type="text" class="form-control" [(ngModel)]="form.searchParams.loginId" placeholder="{{'Search Email' | translate}}">
         </div> -->
-        <div class="col-sm-2">
+        <!-- <div class="col-sm-2">
 
           <select class="form-control" name="roleId" [(ngModel)]="form.searchParams.roleId" aria-label="ngSelected">
             <option [ngValue]="" value="undefined">{{' Select Role' | translate }}</option>
             <option *ngFor="let obj of form.preload.roleList" [value]="obj.key">{{obj.value}}</option>
           </select>
-        </div>
+        </div> -->
         <div class="col-sm-2">
-
-        
           <!-- <input type="text" class="form-control" [(ngModel)]="form.searchParams.status" placeholder="{{'Search Status' | translate}}"> -->
         </div>
         <div class="col-sm-1 ml-3">
@@ -56,7 +55,7 @@ background-size: cover;width:auto;
         </div>
         &nbsp;&nbsp;&nbsp;
         <div class="col-lg-2 ml-4">
-          <button (click)="forward('/user')" type="button" class="btn btn-success">{{'Add User' | translate}}
+          <button (click)="forward('/compensation')" type="button" class="btn btn-success">{{'Add Compensation' | translate}}
           </button>
         </div>
 
@@ -85,46 +84,34 @@ background-size: cover;width:auto;
                 <th><input type="checkbox" [(ngModel)]="isMasterSel" name="list_name" value="h1"
                     (change)="checkUncheckAll($event)" /></th>
                 <th>{{'S.No' | translate}}</th>
-                <th>{{'Image' | translate}}</th>
-                <th>{{'First Name' | translate}}</th>
-                <th>{{'Last Name' | translate}}</th>
-                <th>{{'Login' | translate}}</th>
-                <th>{{'Status' | translate}}</th>
-                <th>{{'Role' | translate}}</th>
-                <th>{{'Phone' | translate}}</th>
-                <th>{{'DOB' | translate}}</th>
+                
+                <th>{{'StaffMember' | translate}}</th>
+                <th>{{'PaymentAmount' | translate}}</th>
+                <th>{{'DateApplied' | translate}}</th>
+                <th>{{'State' | translate}}</th>
                 <th>{{'Edit' | translate}}</th>
               </tr>
 
             </thead>
             <tbody>
               <tr *ngFor="let m of form.list; let i = index" align="center">
-                <td> <input type="checkbox" #checkboxes (change)="checklistUpdate()" [disabled]="m.roleName=='Admin'"
+                <td> <input type="checkbox" #checkboxes (change)="checklistUpdate()"
                     name="list_name" id="{{m.id}}" value="{{isMasterSel}}"/>
                 </td>
                 <td> {{(form.pageNo*5)+i+ 1}} </td>
 
 
-                <td>
-                  <div *ngIf="m.imageId" >
-                    <img src="http://localhost:8080/User/profilePic/{{m.id}}" height="55px" width="80px" style="border-radius: 50%;">
-                  </div>
-                  <div *ngIf="!m.imageId" >
-                    <img src="../../assets/files/default.jpg" height="55px" width="80px" style="border-radius: 50%;">
-                  </div>
-                </td>
+               
 
-                <td> {{ m.firstName }} </td>
-                <td> {{ m.lastName }} </td>
-                <td> {{ m.loginId }} </td>
-                <td> {{ m.status }} </td>
-                <td> {{ m.roleName }} </td>
-                <td> {{ m.phone }} </td>
-                <td> {{ m.dob | date : 'dd-MM-yyyy'}} </td>
+                <td> {{ m.staffMember }} </td>
+                <td> {{ m.paymentAmount }} </td>
+                <td> {{ m.dateApplied | date : 'dd-MM-yyyy' }} </td>
+                <td> {{ m.state }} </td>
+        
                 <td>
 
-                  <button class="fa fa-edit text-primary " id="nnn" [disabled]="m.roleName=='Admin'"
-                    (click)="forward( '/user/' +  m.id)" style="
+                  <button class="fa fa-edit text-primary " id="nnn"
+                    (click)="forward('/compensation/'+m.id)" style="
                   cursor: pointer;"></button>
                   <!-- <a (click)="forward( '/user/' +  m.id)" style="
                     cursor: pointer;">
@@ -154,7 +141,7 @@ background-size: cover;width:auto;
 
               <td *ngIf="form.list.length!=0" style="width: 50%;"></td>
               <td *ngIf="form.list.length==0" style="width: 50%;"><a class="btn btn-warning mr-1"
-                  [routerLink]="['/userlist']" (click)="exit()">{{'Back' | translate}}</a></td>
+                  [routerLink]="['/compensationlist']" (click)="exit()">{{'Back' | translate}}</a></td>
 
 
 

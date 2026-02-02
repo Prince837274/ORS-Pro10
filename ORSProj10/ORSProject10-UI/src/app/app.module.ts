@@ -60,6 +60,10 @@ import { TransportationComponent } from './transportation/transportation.compone
 import { TransportationListComponent } from './transportation/transportation-list.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeListComponent } from './employee/employee-list.component';
+import { CompensationComponent } from './compensation/compensation.component';
+import { CompensationlistComponent } from './compensation/compensationlist.component';
+import { PaymentComponent } from './payment/payment.component';
+import { PaymentListComponent } from './payment/payment-list.component';
 
 
 // import { AuthService } from './auth.service';
@@ -116,6 +120,10 @@ export function myHttpLoader(http: HttpClient) {
     TransportationListComponent,
     EmployeeComponent,
     EmployeeListComponent,
+    CompensationComponent,
+    CompensationlistComponent,
+    PaymentComponent,
+    PaymentListComponent,
 
   ],
   imports: [

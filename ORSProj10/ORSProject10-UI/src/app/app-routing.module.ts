@@ -42,6 +42,10 @@ import { TransportationComponent } from './transportation/transportation.compone
 import { TransportationListComponent } from './transportation/transportation-list.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeListComponent } from './employee/employee-list.component';
+import { CompensationComponent } from './compensation/compensation.component';
+import { CompensationlistComponent } from './compensation/compensationlist.component';
+import { PaymentComponent } from './payment/payment.component';
+import { PaymentListComponent } from './payment/payment-list.component';
 
 const routes: Routes = [
     {
@@ -309,7 +313,33 @@ const routes: Routes = [
     {
         path: 'employee/:id',
         component : EmployeeComponent
+    },
+    {
+        path: 'compensation',
+        component : CompensationComponent
+    },
+    {
+        path: 'compensationlist',
+        component: CompensationlistComponent
+    },
+    {
+        path: 'compensation/:id',
+        component: CompensationComponent
+    },
+    {
+        path: 'payment',
+        component: PaymentComponent
+    },
+    {
+        path: 'paymentlist',
+        component: PaymentListComponent
+    },
+    {
+        path: 'payment/:id',
+        component: PaymentComponent
     }
+
+    
 
 
 

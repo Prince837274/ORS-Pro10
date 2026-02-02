@@ -27,6 +27,13 @@ export class EndpointServiceService {
 
   public EMPLOYEE = this.SERVER_URL + "/Employee";
 
+  public COMPENSATION = this.SERVER_URL + "/Compensation";
+
+  public PAYMENT = this.SERVER_URL + "/Payment";
+
+
+
+
 
 
 
